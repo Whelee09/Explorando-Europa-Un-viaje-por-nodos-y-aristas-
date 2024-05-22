@@ -1,10 +1,7 @@
-//import rsc.Data;
-
 public class Tour {
     Tour(){
        //TODO 
-       // getData();
-       //destokenizarData();
+       
     }
 
 
@@ -21,13 +18,13 @@ public class Tour {
         System.out.println("con comodidad pero si es necesario perder algunas de landmarks");
     }
 
-    public void calcularViaje(){
+    public void calcularViaje(int eleccion){
+        
         //calcEconomicAsPosible();
         //calcFastestAsPossible();
         //calcConfortableAsPossible();
     }
 
-    // Data data = new Data();
 
 
 }
