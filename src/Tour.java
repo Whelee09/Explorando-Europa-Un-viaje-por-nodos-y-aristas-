@@ -1,11 +1,7 @@
 public class Tour {
     Tour(){
        //TODO 
-       
     }
-
-
-
     public void selectAPlan(){
         System.out.println("Ingrese la fecha de partida");
         System.out.println("Ingrese la fecha de regreso");
@@ -24,7 +20,5 @@ public class Tour {
         //calcFastestAsPossible();
         //calcConfortableAsPossible();
     }
-
-
 
 }

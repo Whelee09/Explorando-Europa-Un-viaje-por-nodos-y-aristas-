@@ -63,6 +63,7 @@ fs.writeFile("./src/archivo.txt", "datosss", (error) => {
 
 
 
+//que haga las peticiones a todas las ciudades que marcó?????
 /*
 // const { getJson } = require("serpapi");
 
