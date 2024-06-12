@@ -1,20 +1,55 @@
+//datos de vuelos desde destino hasta cualquier otro destino
 CODORIGEN,CODDESTINO,yyyy-mm-dd,currency,numeroPersonas,numeroParadas,claseDeviaje(economica and son on). 
 //pero el COD tienes que ser los codigos de las ciudades que declaramos como nodos??? 
 y que el usuario alla decidido visitar? o mejor todas las disponibles porque puede ser que salga mas barato llegar por alla
 
 
+//datos HARDCODEADOS de trenes de cierta estacion a otra estacion
+falta agregar los tiempos de los trenes
 MAD-BAR  52-77, tiempoprmedio = 2:30, otro tiempo 2:45, rara vez 3:10
                  81          91
                  87          94
                  43          56
 aclaracion: si se reseva con mucha antelacion y si no esta en una temparada concurrida puede ir entre 20-40  
 entre mas confort le metemos menos paradas y por lo tanto mas CODDESTINO 
-MAD-LON 40-60 barato, 120-180 promedio
-MAD-PARIS 35-50 barato, 80-120 promedio
-MAD-AMS 40-60 , 80-120
-MAD-BERLIN 50-70, 100-140
-MAD-REPCHECA 60-80, 120-160
-MAD-ESTAMBUL 150-200, 200-400// al parecer no hay trenes directos
-MAD-Austria 50-70, 100-140
-MAD-stPeter 200-300, 300-500
-MAD-LISBOA 60-80, 130-170
+
+MAD-BCN 
+MAD-Bordeauz
+MAD-valencia
+MAD-LIS 60-80, 130-170//directo no hay pero no hay otra ciudad importante para pasar antes asi que si
+
+
+VLC-BCN
+barcelona-montpelilier
+montpelilier-paris
+montpelilier-monaco
+montpelilier-lyon
+Bordeauz-paris
+Bordeauz-lyon
+Bordeauz-montpelilier
+lyon-paris
+lyon-berna 
+lyon-monaco
+paris- londres
+paris-amsterdan
+apris-luxemburgo
+paris-barcelona
+paris-frankfurt
+amsterdan0-BERLIN
+amsterdan-bruselas
+amsterdan-frankfurt
+frankfurt-munich
+frankfurt-berna
+munich-BERLIN
+munich-viena
+munich-praga
+munich-monaco
+
+//datos de comida en todos los paises
+
+
+
+//datos de rangos de precios de las principales atracciones
+MAD = precio de algo y precio de otro algo
+
+
