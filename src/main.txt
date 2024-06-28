@@ -19,32 +19,6 @@ MAD-valencia
 MAD-LIS 60-80, 130-170//directo no hay pero no hay otra ciudad importante para pasar antes asi que si
 
 
-VLC-BCN
-barcelona-montpelilier
-montpelilier-paris
-montpelilier-monaco
-montpelilier-lyon
-Bordeauz-paris
-Bordeauz-lyon
-Bordeauz-montpelilier
-lyon-paris
-lyon-berna 
-lyon-monaco
-paris- londres
-paris-amsterdan
-apris-luxemburgo
-paris-barcelona
-paris-frankfurt
-amsterdan0-BERLIN
-amsterdan-bruselas
-amsterdan-frankfurt
-frankfurt-munich
-frankfurt-berna
-munich-BERLIN
-munich-viena
-munich-praga
-munich-monaco
-
 //datos de comida en todos los paises
 
 

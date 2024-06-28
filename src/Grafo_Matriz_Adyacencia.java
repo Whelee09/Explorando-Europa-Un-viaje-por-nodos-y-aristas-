@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
@@ -14,58 +15,28 @@ public class Grafo_Matriz_Adyacencia {
     private int[][] mPesos;
     private int[][] mRecorridos;
     int[][] mAuxPesos;
-    private int INF;
+    private int INF = 9999;//Integer.MAX_VALUE;
     Grafo_Lista_Adyacencia l;
     HashMap<String, Integer> table = new HashMap<>();
     HashMap<String, String> table1 = new HashMap<>();
+    Ciudad objCiudades;
+    List<Ciudad> cities = new ArrayList<>();
+    List<Ciudad> debug = new LinkedList<>();
+
 
     public Grafo_Matriz_Adyacencia(int nodos) {
-        this.V = nodos;
+        Data d = new Data();
+        cities = d.getDataCiudades("src//ciudades.txt");
+
+        //System.out.println("en el constructor de matrizAdye");
+        this.V = cities.size();//nodos;
         this.A = 0;
-        INF = Integer.MAX_VALUE;
         this.mAdyac = new int[nodos][nodos];
         this.mPesos = new int[nodos][nodos];
         llenarMatrizPesos();
         //l = new Grafo_Lista_Adyacencia(V);
-        table.put( "MAD",0);
-        table.put( "BCN",1);
-        table.put( "LHR",2);
-        table.put( "CDG",3);
-        table.put( "FCO",4);
-        table.put( "AMS",5);
-        table.put( "BER",6);
-        table.put( "VIE",7);
-        table.put( "LED",8);
-        table.put( "LIS",9);
-        table.put( "BOR",10);
-        table.put( "VLC",11);
-        table.put( "MPL",12);
-        table.put( "PAR",13);
-        table.put( "MCO",14);
-        table.put( "LYS",15);
-        table.put( "MCO",16);
-        table.put( "BRN",17);
-        table.put( "LON",18);
-        table.put( "LUX",19);
-        table.put( "FRA",20);
-        table.put( "BER",21);
-        table.put( "BRU",22);
-        table.put( "MUC",23);
-        table.put( "VIE",24);
-        table.put( "PRG",25);
+        
 
-
-        table1.put( "MAD","Madrid");
-        table1.put( "BCN","Barcelona");
-        table1.put( "LHR","Londres");
-        table1.put( "CDG","París");
-        table1.put( "FCO","Roma");
-        table1.put( "AMS","Ámsterdam");
-        table1.put( "BER","Berlín");
-        table1.put( "VIE","Viena");
-        table1.put( "LED","San Petersburgo");
-        table1.put( "LIS","Lisboa");
-        //TODO terminar esta tabla
     }
 
     private void llenarMatrizPesos() {
@@ -244,14 +215,39 @@ public class Grafo_Matriz_Adyacencia {
     //     System.out.println("\nEl peso es: " + peso);
     // }
 
-    public void agregarArista(String a, String b, int peso) {
-        System.out.println("aun no me he detenido porque ORigen" + a + " des: " + b);
-        int u = table.get(a);
-        int v = table.get(b);
+    public int findId(String a){
+        System.out.println("entre al find ID");
+        boolean coincidencia = false;
+        int i=0;
+        int index;
+        do{ 
+            if (cities.get(i).getCod().equals(a)) {
+                System.out.println("COINCIDENCAI");
+                coincidencia = true;
+                index = i;
+                return index;
+            }
+            i++;
+        }while(i<cities.size() && (coincidencia == false));
+        System.out.println("di " + i + " vueltas");
+        //no deberia llegar aqui
+        return -1;
+    }
 
+
+    private void showCities(){
+        System.out.println("------------------------------------------");
+        for (int i = 0; i < cities.size(); i++) {
+            System.out.println(cities.get(i).getNombre() + " cod: " + cities.get(i).getCod() + " id: " + cities.get(i).getId());
+        }
+    }
+
+    public void agregarArista(String a, String b, int peso) {
+        int u = findId(a);
+        int v = findId(b);
         System.out.println("u es: " + u + " y v es:" + v);
 
-        //l.agregarArista(u, v);
+    //     //l.agregarArista(u, v);
 
         if (u != v) {
             mAdyac[u][v] = 1;
@@ -332,7 +328,7 @@ public class Grafo_Matriz_Adyacencia {
         for (int i = 0; i < V; i++) {
             System.out.println("Fila " + i + ":");
             for (int j = 0; j < V; j++) {
-                System.out.print(mAdyac[i][j] + " ");
+                System.out.print( mAdyac[i][j] + " ");
             }
             System.out.println("");
         }

@@ -1,5 +1,13 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.Callable;
+import java.util.stream.Collectors;
 
 public class Tour {
     private Date dateInicio;
@@ -10,6 +18,14 @@ public class Tour {
     // verano empieza desde el 15 de juanio hasta 20 de septiembre
 
     Tour() {
+
+    }
+
+
+    public void ejecutarNodeDesdeJava() {
+        // String command = "node src/test.js"; // Reemplaza con la ruta a tu script
+
+        
 
     }
 
@@ -33,28 +49,28 @@ public class Tour {
         // }
 
         // estaEnTemporada baja : -10%
-        //temporadaRegular +- 5%
+        // temporadaRegular +- 5%
     }
 
     public void calcularViaje() {
         switch (getEleccion()) {
             case 1:
-                //mas rapido
+                // mas rapido
                 Herramienta h = new Herramienta();
                 h.construirGrafo();
-                //h.Fastest();
+                // h.Fastest();
                 break;
             case 2:
-                //mas economico
+                // mas economico
                 break;
             case 3:
-                //mas confort maybe???
+                // mas confort maybe???
                 break;
             case 4:
-                //por si aparece alguna otra cosa
+                // por si aparece alguna otra cosa
                 break;
             default:
-                //TODO handle exceptions
+                // TODO handle exceptions
                 break;
         }
         // calcEconomicAsPosible();
@@ -62,7 +78,7 @@ public class Tour {
         // calcConfortableAsPossible();
     }
 
-    public int getEleccion(){
+    public int getEleccion() {
         return eleccion;
     }
 

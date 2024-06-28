@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "inquirer": "^9.2.22",
+    "prompt-sync": "^4.2.0",
+    "requirer": "^0.0.4",
+    "serpapi": "^2.1.0"
+  }
+}

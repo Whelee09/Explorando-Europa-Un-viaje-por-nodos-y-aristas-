@@ -1,0 +1,24 @@
+MAD-Madrid
+BCN-Barcelona
+LHR-Londres
+CDG-París
+FCO-Roma
+AMS-Ámsterdam
+BER-Berlín
+VIE-Viena
+LED-San Petersburgo
+LIS-Lisboa
+BOR-Burdeos
+VLC-Valencia
+MPL-Montpellier
+PAR-París
+MCO-Orlando
+LYS-Lyon
+BRN-Berna
+LON-Londres
+LUX-Luxemburgo
+FRA-Fráncfort
+BRU-Bruselas
+MUC-Múnich
+VIE-Viena
+PRG-Praga
