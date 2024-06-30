@@ -1,13 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.Callable;
-import java.util.stream.Collectors;
+
 
 public class Tour {
     private Date dateInicio;
@@ -18,14 +12,6 @@ public class Tour {
     // verano empieza desde el 15 de juanio hasta 20 de septiembre
 
     Tour() {
-
-    }
-
-
-    public void ejecutarNodeDesdeJava() {
-        // String command = "node src/test.js"; // Reemplaza con la ruta a tu script
-
-        
 
     }
 
@@ -57,8 +43,8 @@ public class Tour {
             case 1:
                 // mas rapido
                 Herramienta h = new Herramienta();
-                h.construirGrafo();
-                // h.Fastest();
+                h.construirGrafo(4);
+                 //h.Fastest();
                 break;
             case 2:
                 // mas economico

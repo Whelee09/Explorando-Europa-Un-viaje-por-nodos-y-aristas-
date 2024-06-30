@@ -27,16 +27,12 @@ public class Grafo_Matriz_Adyacencia {
     public Grafo_Matriz_Adyacencia(int nodos) {
         Data d = new Data();
         cities = d.getDataCiudades("src//ciudades.txt");
-
-        //System.out.println("en el constructor de matrizAdye");
         this.V = cities.size();//nodos;
         this.A = 0;
         this.mAdyac = new int[nodos][nodos];
         this.mPesos = new int[nodos][nodos];
         llenarMatrizPesos();
         //l = new Grafo_Lista_Adyacencia(V);
-        
-
     }
 
     private void llenarMatrizPesos() {
@@ -284,12 +280,8 @@ public class Grafo_Matriz_Adyacencia {
             adj1[origen].add(destino);
             adj1[destino].add(origen);
 
-            // System.out.println("aun sin saber si es la optima xd");
-            // System.out.println("peso:" + mPesos[res[1]][res[2]] + ". fila " + table.get(res[1]) + "  columna" + table.get(res[2]));
             if (!hayCiclo(adj1, origen, destino, new boolean[V])) {
                 aristas++;
-                //descomente esto para ver la ruta expresado en terminos de filas y columnas System.out.println("La optima es: ");
-                //System.out.println("peso:" + mPesos[res[1]][res[2]] + ". fila " + table.get(res[1]) + "  columna" + table.get(res[2]));
                 System.out.println(table.get(origen) + " - " + table.get(destino));
                 mAuxPesos[origen][destino] = INF;
                 mAuxPesos[destino][origen] = INF;

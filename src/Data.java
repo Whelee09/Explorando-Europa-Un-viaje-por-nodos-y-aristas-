@@ -30,18 +30,6 @@ public class Data {
         System.out.println("HI");
     }
 
-    public void calcEconomicAsPosible() {
-        // cuerpo
-    }
-
-    public void calcFastestAsPossible() {
-        // cuerpo
-    }
-
-    public void calcConfortableAsPossible() {
-        // cuerpo
-    }
-
     public List<String> getCiudades() {
         return ciudades;
     }
@@ -61,33 +49,6 @@ public class Data {
         return CIUDADES;
     }
 
-    public void armarGrafo(String ruta){
-        int NODOS = 24;
-        Grafo_Matriz_Adyacencia grafo = new Grafo_Matriz_Adyacencia(NODOS);
-        List<String> datos = getDataFromTxt(ruta);
-
-        for (int i = 0; i < datos.size(); i++) {
-            String[] destokenizado = datos.get(i).split("-");
-            String codOrigen = destokenizado[0];
-            String codDestino = destokenizado[1];
-            float lowRange = Float.parseFloat(destokenizado[2]);
-            float highRange = Float.parseFloat(destokenizado[3]);
-            
-            int precio = (int)calcPrecio(lowRange,highRange);
-            grafo.agregarArista(codOrigen, codDestino,precio);
-            
-        }
-
-        grafo.printGrafo();
-
-    }
-
-    private float calcPrecio(float low, float high){
-        float l = low;
-        float h = high;
-        //TODO hacerlo con algo random o algo asi que no sea solo el promedio
-        return ((l + h)/2); 
-    }
     public void updateListaCiudades() {
         for (String trayecto : recorridos) {
             String[] destokenizado = trayecto.split("-");
