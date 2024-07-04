@@ -1,7 +1,5 @@
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
-
 
 public class Tour {
     private Date dateInicio;
@@ -39,11 +37,13 @@ public class Tour {
     }
 
     public void calcularViaje() {
-        switch (getEleccion()) {
+        int optionss =1;
+        switch (optionss) {
             case 1:
                 // mas rapido
                 Herramienta h = new Herramienta();
                 h.construirGrafo(4);
+                h.calcularRuta();
                  //h.Fastest();
                 break;
             case 2:

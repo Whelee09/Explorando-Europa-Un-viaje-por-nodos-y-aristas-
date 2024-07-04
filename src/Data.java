@@ -42,10 +42,10 @@ public class Data {
             String[] destokenizado = datos.get(i).split("-");
             String cod = destokenizado[0];
             String nombre = destokenizado[1];
-            //System.out.println(cod + " " + i + " " + nombre);
+            System.out.println("el nombre de la ciudad x es " + nombre );
             CIUDADES.add(new Ciudad(cod, i, nombre));
-           // System.out.println("la cantidad de ciudades es" +  CIUDADES.size());
         }
+        System.out.println("por ejemplo retonro la ciudad "   + CIUDADES.getFirst());
         return CIUDADES;
     }
 
@@ -54,14 +54,24 @@ public class Data {
             String[] destokenizado = trayecto.split("-");
             if (!ciudades.contains(destokenizado[0])) {
                 ciudades.add(destokenizado[0]);
-               // System.out.println("entre");
             }
             if (!ciudades.contains(destokenizado[1])) {
                 ciudades.add(destokenizado[1]);
-                //System.out.println("entre2");
-
             }
         }
+    }
+
+    public List<Ciudad> getCiudadesAVisitar(String ruta) {
+        List<String> datos = getDataFromTxt(ruta);
+        List<Ciudad> citiesToVisit = new ArrayList<>();
+
+        for (int i = 0; i < datos.size(); i++) {
+            String[] destokenizado = datos.get(i).split("-");
+            int id = Integer.parseInt(destokenizado[0]);
+            String nombre = destokenizado[1];
+            citiesToVisit.add(new Ciudad(null, id, nombre));
+        }
+        return citiesToVisit;
     }
 
     public List<String> getDataFromTxt(String ruta) {

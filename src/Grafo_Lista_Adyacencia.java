@@ -1,8 +1,6 @@
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 
 public class Grafo_Lista_Adyacencia {
 
@@ -52,46 +50,5 @@ public class Grafo_Lista_Adyacencia {
             System.out.println();
         }
     }
-
-    public void bfs(int s) {
-        boolean[] visited = new boolean[V];
-
-        Queue<Integer> q = new LinkedList<>();
-        visited[s] = true;
-        q.offer(s);
-
-        while (!q.isEmpty()) {
-            int u = q.poll();
-            System.out.print(u + " ");
-
-            for (int v : adj[u]) {
-                if (!visited[v]) {
-                    visited[v] = true;
-                    q.offer(v);
-                }
-            }
-        }
-    }
-
-    public void dfs(int s) {
-        boolean[] visited = new boolean[V];
-
-        Stack<Integer> stack = new Stack();
-        visited[s] = true;
-        stack.push(s);
-
-        while (!stack.isEmpty()) {
-            int u = stack.pop();
-            System.out.print(u + " ");
-
-            for (int v : adj[u]) {
-                if (!visited[v]) {
-                    visited[v] = true;
-                    stack.push(v);
-                }
-            }
-        }
-    }
-
 }
 

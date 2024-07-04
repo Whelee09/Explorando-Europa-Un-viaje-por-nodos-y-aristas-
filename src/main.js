@@ -5,7 +5,10 @@
 // require('dotenv').config();
 // const API_KEY = process.env.API_KEY;
 var prompt = require("prompt-sync")();
+const { log } = require("console");
 const fs = require("fs");
+let ciudadesAVisitar = "";
+
 
 async function leer(ruta) {
   try {
@@ -29,13 +32,12 @@ function pedirFechas() {
 
 function cargarCiudades() {}
 
-async function pedirCiudades() {
+async function pedirCiudades(cb) {
   const datosCiudades = await leer(__dirname + "/ciudades.txt"); // Use await to get the data from leer
   console.log("Marque las ciudades a visitar ");
 
     let mapa = new Map();
   // Agregar las ciudades con sus respectivos códigos y países
-    //TODO agregar paises???
     console.log("cant de ci" + datosCiudades.length);
     for(let i =0; i< datosCiudades.length; i++){
       let dato = datosCiudades[i].split("-");
@@ -49,26 +51,33 @@ async function pedirCiudades() {
       );
     }
 
-
   mapa.forEach((valor, llave) => {
     console.log(`\nquiere visitar ${valor.ciudad} `);
     let opcion = prompt('escoja 1 para si y otro para no ');
 
-    if (opcion === 1) {
+    if (opcion == 1) {
+      console.log("ENTRE AL IF");
       valor.activo = true;
+      ciudadesAVisitar = ciudadesAVisitar + llave + "-" + valor.ciudad + "\n"
     } else {
       valor.activo = false;
     }
   });
+  console.log(ciudadesAVisitar);
+  cb();
 }
-pedirCiudades(); 
-/*const { log } = require("console");
-fs.writeFile("./src/archivo.txt", "datosss", (error) => {
-  if (error) {
-    throw error;
-  }
-  console.log("creado de forma exitosa");
-});*/
+pedirCiudades(escribirArchivo);
+
+
+function escribirArchivo() {
+  fs.writeFile("./src/ciudadesAVisitar.txt", ciudadesAVisitar, (error) => {
+    if (error) {
+      throw error;
+    }
+    console.log("creado de forma exitosa");
+  });
+}
+
 
 //que haga las peticiones a todas las ciudades que marcó?????
 /*
